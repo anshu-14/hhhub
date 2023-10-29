@@ -3,34 +3,41 @@
       <div class="col-lg-6 bg-gray p-5 text-center mt-5">
          <h4 class="text-center fw-bolder fs-2">Login</h4>
          <p class="mb-5 fs-7">Already gave an account ?</p>
-         <a href="index.html"><button class="btn fw-bold mb-5 btn-outline-success px-4 rounded-pill">log In</button></a>
+         <a routerLink="/login"><button class="btn fw-bold mb-5 btn-outline-success px-4 rounded-pill">log In</button></a>
          
       </div>
+
+      
       <div class="col-lg-6 p  vh-90">
          <div class="row d-flex vh-900">
+            <div class="alert alert-success" role="alert">
+               Account has been created <a routerLink="/login" class="success">Login here</a>
+            </div>
              <div class="col-md-8 p-3  m-auto text-center align-items-center">
                  <h4 class="text-center fw-bolder mb-4 fs-2">Register Yourself</h4>
+                 <form action="" [formGroup]="signupForm">
                   <div class="input-group mb-4">
                     <span class="input-group-text border-end-0 inbg" id="basic-addon1"><i class="fa-solid fa-user fa-beat"></i></span>
-                    <input type="text" class="form-control ps-2 border-start-0 fs-7 inbg form-control-lg mb-0" placeholder="Enter Full Name" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control ps-2 border-start-0 fs-7 inbg form-control-lg mb-0" placeholder="Enter Full Name" aria-label="Username" aria-describedby="basic-addon1"  formControlName="displayName">
                  </div>
                  <div class="input-group mb-4">
                     <span class="input-group-text border-end-0 inbg" id="basic-addon1"><i class="fa-solid fa-envelope fa-beat"></i></span>
-                    <input type="text" class="form-control ps-2 border-start-0 fs-7 inbg form-control-lg mb-0" placeholder="Enter Email Address" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control ps-2 border-start-0 fs-7 inbg form-control-lg mb-0" placeholder="Enter Email Address" aria-label="Username" aria-describedby="basic-addon1" formControlName="email">
                  </div>
                  <div class="input-group mb-4">
                     <span class="input-group-text border-end-0 inbg" id="basic-addon1"><i class="fa-solid fa-lock fa-beat"></i></span>
-                    <input type="password" class="form-control ps-2 fs-7 border-start-0 form-control-lg inbg mb-0" placeholder="Enter Password" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="password" class="form-control ps-2 fs-7 border-start-0 form-control-lg inbg mb-0" placeholder="Enter Password" aria-label="Username" aria-describedby="basic-addon1" formControlName="password">
                  </div>
                    <div class="input-group mb-4">
                     <span class="input-group-text border-end-0 inbg" id="basic-addon1"><i class="fa-solid fa-lock fa-beat"></i></span>
-                    <input type="password" class="form-control ps-2 fs-7 border-start-0 form-control-lg inbg mb-0" placeholder="Confirm Password" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="password" class="form-control ps-2 fs-7 border-start-0 form-control-lg inbg mb-0" placeholder="Confirm Password" aria-label="Username" aria-describedby="basic-addon1" formControlName="confirmpass">
                  </div>
                  
-                 <button class="btn btn-lg fw-bold fs-7 btn-success  w-100">signup</button>
+                 <button class="btn btn-lg fw-bold fs-7 btn-success  w-100" (click)="signup()">signup</button>
                  
-                 
+               </form>
              </div>
+             
          </div>
           
       </div>
